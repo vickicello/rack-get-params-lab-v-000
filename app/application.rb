@@ -25,7 +25,7 @@ class Application
     elsif req.path.match(/add/)
       new_item = req.params["item"]
       if @@items.include?(new_item)
-        rep.write "added #{new_item}"
+        req.write "added #{new_item}"
       elsif !@@items.include?(new_item)
         rep.write "We don't have that item"
       end
